@@ -1,0 +1,6 @@
+framework module Pods_TareaAPITests {
+  umbrella header "Pods-TareaAPITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

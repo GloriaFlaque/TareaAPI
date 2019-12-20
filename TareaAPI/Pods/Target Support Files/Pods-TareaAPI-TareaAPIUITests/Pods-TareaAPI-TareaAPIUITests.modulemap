@@ -1,0 +1,6 @@
+framework module Pods_TareaAPI_TareaAPIUITests {
+  umbrella header "Pods-TareaAPI-TareaAPIUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
