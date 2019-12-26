@@ -1,0 +1,6 @@
+framework module Pods_TareaAPINasa_TareaAPINasaUITests {
+  umbrella header "Pods-TareaAPINasa-TareaAPINasaUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

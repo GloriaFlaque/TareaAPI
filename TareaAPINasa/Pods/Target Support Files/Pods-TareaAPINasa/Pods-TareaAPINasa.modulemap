@@ -1,0 +1,6 @@
+framework module Pods_TareaAPINasa {
+  umbrella header "Pods-TareaAPINasa-umbrella.h"
+
+  export *
+  module * { export * }
+}
