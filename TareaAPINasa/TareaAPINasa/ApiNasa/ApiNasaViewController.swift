@@ -11,19 +11,11 @@ import UIKit
 class ApiNasaViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var searchBar: UISearchBar!
        
     let searchController = UISearchController(searchResultsController: nil)
     var presenter: ApiNasaPresenter?
-    var days = ["2018-08-04", "2018-08-03", "2018-08-02", "2018-08-01", "1999-08-04"]
-    var listInfoT = [[Info]]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    var listInfo = [Info]() {
+    var days = ["2018-08-04", "2018-08-03", "2018-08-02", "2018-08-01", "2018-03-04", "2020-01-02"]
+    var listInfo = [[Info]]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -58,21 +50,14 @@ class ApiNasaViewController: UIViewController {
 
 extension ApiNasaViewController: ApiNasaView {
     func setupUI() {
-//        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Buscar..."
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-        
         for i in days{
-            print(i)
             let infoRequest = ApiNasaRequest(dateCode: i)
             infoRequest.getData { [weak self] result in
                 switch result{
                 case .failure(let error):
                     print(error)
                 case .success(let info):
-                    self?.listInfoT.append(info)
+                    self?.listInfo.append(info)
                 }
             }
         }
@@ -81,12 +66,12 @@ extension ApiNasaViewController: ApiNasaView {
 
 extension ApiNasaViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return listInfoT.count
+         return listInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ApiNasaCell = tableView.dequeueReusableCell(withIdentifier: "apiNasaCell", for: indexPath) as! ApiNasaCell
-            let info = listInfoT[indexPath.row]
+            let info = listInfo[indexPath.row]
             for i in info{
                 cell.titleLabel.text = i.title
                 cell.dateLabel.text = i.date
@@ -106,21 +91,6 @@ extension ApiNasaViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        self.presenter?.navigateToApiNasaDetail(day: listInfoT[indexPath.row])
-    }
-}
-
-extension ApiNasaViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchBarText = searchBar.text else {return}
-        let infoRequest = ApiNasaRequest(dateCode: searchBarText)
-        infoRequest.getData { [weak self] result in
-            switch result{
-            case .failure(let error):
-                print(error)
-            case .success(let info):
-                self?.listInfo = info
-            }
-        }
+        self.presenter?.navigateToApiNasaDetail(day: listInfo[indexPath.row])
     }
 }

@@ -34,7 +34,4 @@ class ApiNasaDetailPresenter: Presenter {
             break
         }
     }
-    func mmm() {
-        print("holaaaaaaaaaaa")
-    }
 }

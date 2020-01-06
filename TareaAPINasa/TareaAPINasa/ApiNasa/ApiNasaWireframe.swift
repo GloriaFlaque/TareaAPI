@@ -29,7 +29,6 @@ extension ApiNasaViewController: ApiNasaWireframe {
         if let detailViewController = segue.destination as? ApiNasaDetailViewController {
             ApiNasaDetailConfigurator.shared.prepareScene(viewController: detailViewController)
             detailViewController.presenter?.day = sender as! [Info]
-            print(sender)
         } else if let filterViewController = segue.destination as? ApiNasaFilteredViewController {
             ApiNasaFilteredConfigurator.shared.prepareScene(viewController: filterViewController)
         }

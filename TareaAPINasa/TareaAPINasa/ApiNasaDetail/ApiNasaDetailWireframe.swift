@@ -10,11 +10,9 @@ import UIKit
 
 /// Wireframe protocol to define routing to other scenes.
 protocol ApiNasaDetailWireframe: class {
-
 }
 
 // MARK: - UIViewController extension to implement wireframe protocol.
 extension ApiNasaDetailViewController: ApiNasaDetailWireframe {
-    
     
 }

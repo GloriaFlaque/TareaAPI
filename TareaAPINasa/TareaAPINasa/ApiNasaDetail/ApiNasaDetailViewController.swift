@@ -38,11 +38,10 @@ class ApiNasaDetailViewController: UIViewController {
 
 extension ApiNasaDetailViewController: ApiNasaDetailView {
     func show(day: [Info]) {
-        print("seeeeeeee")
         for i in day {
             self.titleLabel.text = i.title
-            self.dateLabel.text = i.date
-            self.descriptionLabel.text = i.explanation
+            self.dateLabel.text = "Date: \(i.date)"
+            self.descriptionLabel.text = "Explanation: \(i.explanation)"
             let url = URL(string: i.hdurl)
             DispatchQueue.global().async {
                 if let data = try? Data(contentsOf: url!){
