@@ -1,19 +1,19 @@
 //
-//  ApiNasaPresenter.swift
+//  ApiNasaFilteredPresenter.swift
 //  TareaAPINasa
 //
-//  Created by Gloria Flaqué García on 23/12/2019.
-//  Copyright © 2019 Gloria Flaqué García. All rights reserved.
+//  Created by Gloria Flaqué García on 04/01/2020.
+//  Copyright © 2020 Gloria Flaqué García. All rights reserved.
 //
 
 import Foundation
 
-class ApiNasaPresenter: Presenter {
+class ApiNasaFilteredPresenter: Presenter {
 
-fileprivate weak var view: ApiNasaView!
-fileprivate weak var wireframe: ApiNasaWireframe!
+fileprivate weak var view: ApiNasaFilteredView!
+fileprivate weak var wireframe: ApiNasaFilteredWireframe!
 
-init(view: ApiNasaView, wireframe: ApiNasaWireframe) {
+init(view: ApiNasaFilteredView, wireframe: ApiNasaFilteredWireframe) {
     self.view = view
     self.wireframe = wireframe
 }
@@ -36,9 +36,5 @@ init(view: ApiNasaView, wireframe: ApiNasaWireframe) {
     
     func navigateToApiNasaDetail(day: [Info]) {
         self.wireframe.navigateToDetail(day: day)
-    }
-    
-    func navigateToApiNasaSearch() {
-        self.wireframe.navigateToSearch()
     }
 }

@@ -8,6 +8,6 @@
 
 import Foundation
 
-class ApiNasaView: ViewProtocol, FeedbackViewProtocol {
+protocol ApiNasaView: ViewProtocol, FeedbackViewProtocol {
     
 }

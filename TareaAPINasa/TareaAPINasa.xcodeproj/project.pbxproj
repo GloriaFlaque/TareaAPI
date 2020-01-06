@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221BB32D23C10E0D00871C18 /* ApiNasaFilteredConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BB32C23C10E0D00871C18 /* ApiNasaFilteredConfigurator.swift */; };
+		221BB32F23C111C500871C18 /* ApiNasaFilteredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BB32E23C111C500871C18 /* ApiNasaFilteredView.swift */; };
+		221BB33123C111E800871C18 /* ApiNasaFilteredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BB33023C111E800871C18 /* ApiNasaFilteredViewController.swift */; };
+		221BB33323C1120000871C18 /* ApiNasaFilteredPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BB33223C1120000871C18 /* ApiNasaFilteredPresenter.swift */; };
+		221BB33523C1121900871C18 /* ApiNasaFilteredWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BB33423C1121900871C18 /* ApiNasaFilteredWireframe.swift */; };
+		221BB33723C27AEB00871C18 /* ApiNasaFilteredCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221BB33623C27AEB00871C18 /* ApiNasaFilteredCell.swift */; };
 		2281BDDA23B11DC800F88A1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BDD923B11DC800F88A1A /* AppDelegate.swift */; };
 		2281BDDC23B11DC800F88A1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BDDB23B11DC800F88A1A /* SceneDelegate.swift */; };
 		2281BDE123B11DC800F88A1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2281BDDF23B11DC800F88A1A /* Main.storyboard */; };
@@ -26,6 +32,11 @@
 		2281BE2C23B1227500F88A1A /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE2B23B1227500F88A1A /* Presenter.swift */; };
 		2281BE2E23B4B8C500F88A1A /* ApiNasa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE2D23B4B8C500F88A1A /* ApiNasa.swift */; };
 		2281BE3023B4D4B400F88A1A /* ApiNasaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE2F23B4D4B400F88A1A /* ApiNasaRequest.swift */; };
+		2281BE3523B5EC4900F88A1A /* ApiNasaDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE3423B5EC4900F88A1A /* ApiNasaDetailConfigurator.swift */; };
+		2281BE3723B5EE1900F88A1A /* ApiNasaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE3623B5EE1900F88A1A /* ApiNasaDetailView.swift */; };
+		2281BE3923B5EE3F00F88A1A /* ApiNasaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE3823B5EE3F00F88A1A /* ApiNasaDetailViewController.swift */; };
+		2281BE3B23B5EE5500F88A1A /* ApiNasaDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE3A23B5EE5500F88A1A /* ApiNasaDetailPresenter.swift */; };
+		2281BE3D23B5EE6B00F88A1A /* ApiNasaDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE3C23B5EE6B00F88A1A /* ApiNasaDetailWireframe.swift */; };
 		940E1E4B267DED495C0D1EEC /* Pods_TareaAPINasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CAD0D0D12D38AB7EFE789B /* Pods_TareaAPINasa.framework */; };
 		B4B0971702F7BEB33E5DFB7A /* Pods_TareaAPINasaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB26D372E9FDA66A44791BC /* Pods_TareaAPINasaTests.framework */; };
 		F00CFB4432331DDFD69FAD4B /* Pods_TareaAPINasa_TareaAPINasaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C38913DFAB3132FE3744348 /* Pods_TareaAPINasa_TareaAPINasaUITests.framework */; };
@@ -51,6 +62,12 @@
 /* Begin PBXFileReference section */
 		0B662BA6B3537077F4367FE3 /* Pods-TareaAPINasaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TareaAPINasaTests.release.xcconfig"; path = "Target Support Files/Pods-TareaAPINasaTests/Pods-TareaAPINasaTests.release.xcconfig"; sourceTree = "<group>"; };
 		1F6FBAF56CE63BF970DAFEF7 /* Pods-TareaAPINasa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TareaAPINasa.release.xcconfig"; path = "Target Support Files/Pods-TareaAPINasa/Pods-TareaAPINasa.release.xcconfig"; sourceTree = "<group>"; };
+		221BB32C23C10E0D00871C18 /* ApiNasaFilteredConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaFilteredConfigurator.swift; sourceTree = "<group>"; };
+		221BB32E23C111C500871C18 /* ApiNasaFilteredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaFilteredView.swift; sourceTree = "<group>"; };
+		221BB33023C111E800871C18 /* ApiNasaFilteredViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaFilteredViewController.swift; sourceTree = "<group>"; };
+		221BB33223C1120000871C18 /* ApiNasaFilteredPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaFilteredPresenter.swift; sourceTree = "<group>"; };
+		221BB33423C1121900871C18 /* ApiNasaFilteredWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaFilteredWireframe.swift; sourceTree = "<group>"; };
+		221BB33623C27AEB00871C18 /* ApiNasaFilteredCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaFilteredCell.swift; sourceTree = "<group>"; };
 		2281BDD623B11DC800F88A1A /* TareaAPINasa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TareaAPINasa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2281BDD923B11DC800F88A1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2281BDDB23B11DC800F88A1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +93,11 @@
 		2281BE2B23B1227500F88A1A /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		2281BE2D23B4B8C500F88A1A /* ApiNasa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasa.swift; sourceTree = "<group>"; };
 		2281BE2F23B4D4B400F88A1A /* ApiNasaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaRequest.swift; sourceTree = "<group>"; };
+		2281BE3423B5EC4900F88A1A /* ApiNasaDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDetailConfigurator.swift; sourceTree = "<group>"; };
+		2281BE3623B5EE1900F88A1A /* ApiNasaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDetailView.swift; sourceTree = "<group>"; };
+		2281BE3823B5EE3F00F88A1A /* ApiNasaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDetailViewController.swift; sourceTree = "<group>"; };
+		2281BE3A23B5EE5500F88A1A /* ApiNasaDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDetailPresenter.swift; sourceTree = "<group>"; };
+		2281BE3C23B5EE6B00F88A1A /* ApiNasaDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDetailWireframe.swift; sourceTree = "<group>"; };
 		2C38913DFAB3132FE3744348 /* Pods_TareaAPINasa_TareaAPINasaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TareaAPINasa_TareaAPINasaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62CAD0D0D12D38AB7EFE789B /* Pods_TareaAPINasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TareaAPINasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB26D372E9FDA66A44791BC /* Pods_TareaAPINasaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TareaAPINasaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +135,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221BB32B23C10DD000871C18 /* ApiNasaFiltered */ = {
+			isa = PBXGroup;
+			children = (
+				221BB32C23C10E0D00871C18 /* ApiNasaFilteredConfigurator.swift */,
+				221BB32E23C111C500871C18 /* ApiNasaFilteredView.swift */,
+				221BB33023C111E800871C18 /* ApiNasaFilteredViewController.swift */,
+				221BB33223C1120000871C18 /* ApiNasaFilteredPresenter.swift */,
+				221BB33423C1121900871C18 /* ApiNasaFilteredWireframe.swift */,
+				221BB33623C27AEB00871C18 /* ApiNasaFilteredCell.swift */,
+			);
+			path = ApiNasaFiltered;
+			sourceTree = "<group>";
+		};
 		2281BDCD23B11DC800F88A1A = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +175,8 @@
 			children = (
 				2281BE2423B121DD00F88A1A /* Arquitecture */,
 				2281BE0B23B11E8000F88A1A /* ApiNasa */,
+				2281BE3323B5EC2900F88A1A /* ApiNasaDetail */,
+				221BB32B23C10DD000871C18 /* ApiNasaFiltered */,
 				2281BDD923B11DC800F88A1A /* AppDelegate.swift */,
 				2281BDDB23B11DC800F88A1A /* SceneDelegate.swift */,
 				2281BDDF23B11DC800F88A1A /* Main.storyboard */,
@@ -192,6 +229,18 @@
 				2281BE2B23B1227500F88A1A /* Presenter.swift */,
 			);
 			path = Arquitecture;
+			sourceTree = "<group>";
+		};
+		2281BE3323B5EC2900F88A1A /* ApiNasaDetail */ = {
+			isa = PBXGroup;
+			children = (
+				2281BE3423B5EC4900F88A1A /* ApiNasaDetailConfigurator.swift */,
+				2281BE3623B5EE1900F88A1A /* ApiNasaDetailView.swift */,
+				2281BE3823B5EE3F00F88A1A /* ApiNasaDetailViewController.swift */,
+				2281BE3A23B5EE5500F88A1A /* ApiNasaDetailPresenter.swift */,
+				2281BE3C23B5EE6B00F88A1A /* ApiNasaDetailWireframe.swift */,
+			);
+			path = ApiNasaDetail;
 			sourceTree = "<group>";
 		};
 		3E9741DE8E37D6F944A292BD /* Frameworks */ = {
@@ -420,6 +469,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2281BE3D23B5EE6B00F88A1A /* ApiNasaDetailWireframe.swift in Sources */,
+				221BB33123C111E800871C18 /* ApiNasaFilteredViewController.swift in Sources */,
 				2281BE1F23B11F1D00F88A1A /* ApiNasaView.swift in Sources */,
 				2281BE1923B11EE000F88A1A /* ApiNasaCell.swift in Sources */,
 				2281BE1D23B11F0C00F88A1A /* ApiNasaConfigurator.swift in Sources */,
@@ -427,13 +478,22 @@
 				2281BDDA23B11DC800F88A1A /* AppDelegate.swift in Sources */,
 				2281BE3023B4D4B400F88A1A /* ApiNasaRequest.swift in Sources */,
 				2281BE2123B11F3700F88A1A /* ApiNasaPresenter.swift in Sources */,
+				2281BE3B23B5EE5500F88A1A /* ApiNasaDetailPresenter.swift in Sources */,
+				221BB32D23C10E0D00871C18 /* ApiNasaFilteredConfigurator.swift in Sources */,
 				2281BE2A23B1224800F88A1A /* FeedbackViewProtocol.swift in Sources */,
 				2281BE2323B11F4500F88A1A /* ApiNasaWireframe.swift in Sources */,
 				2281BE2623B1220800F88A1A /* Configurator.swift in Sources */,
 				2281BE2C23B1227500F88A1A /* Presenter.swift in Sources */,
 				2281BE2823B1222A00F88A1A /* ViewProtocol.swift in Sources */,
+				2281BE3523B5EC4900F88A1A /* ApiNasaDetailConfigurator.swift in Sources */,
+				221BB33323C1120000871C18 /* ApiNasaFilteredPresenter.swift in Sources */,
+				2281BE3723B5EE1900F88A1A /* ApiNasaDetailView.swift in Sources */,
+				221BB32F23C111C500871C18 /* ApiNasaFilteredView.swift in Sources */,
+				2281BE3923B5EE3F00F88A1A /* ApiNasaDetailViewController.swift in Sources */,
 				2281BE2E23B4B8C500F88A1A /* ApiNasa.swift in Sources */,
 				2281BDDC23B11DC800F88A1A /* SceneDelegate.swift in Sources */,
+				221BB33723C27AEB00871C18 /* ApiNasaFilteredCell.swift in Sources */,
+				221BB33523C1121900871C18 /* ApiNasaFilteredWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

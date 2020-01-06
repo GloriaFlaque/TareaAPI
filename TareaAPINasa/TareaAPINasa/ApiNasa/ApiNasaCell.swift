@@ -11,5 +11,5 @@ import UIKit
 class ApiNasaCell: UITableViewCell {
     @IBOutlet weak var nasaImg: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
 }
