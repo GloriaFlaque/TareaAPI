@@ -8,16 +8,33 @@
 
 import Foundation
 
-struct Info:Decodable {
-    var copyright: String
+struct Info: Decodable {
     var date: String
     var explanation: String
     var hdurl: String
     var media_type: String
-    var service_version: String
     var title: String
-    var url: String
-    
 }
 
+struct Data: Decodable {
+    var date_created: String
+    var description: String
+    var title: String
+}
 
+struct Link: Decodable {
+    var href: String
+}
+
+struct ItemsDatails: Decodable {
+    var data: [Data]
+    var link: [Link]
+}
+
+struct ItemsInfo: Decodable {
+    var items: [ItemsDatails]
+}
+
+struct CollectionInfo: Decodable {
+    var collection: ItemsInfo
+}

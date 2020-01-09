@@ -52,5 +52,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0EEB35F4-8122-495F-AFE6-5D0B233737B0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TareaAPINasa/ApiNasaRequest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "getData(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0EEB35F4-8122-495F-AFE6-5D0B233737B0 - 6af7e278d4d7cf1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TareaAPINasa.ApiNasaNameRequest.getData(completion: (Swift.Result&lt;Swift.Array&lt;TareaAPINasa.ItemsDatails&gt;, TareaAPINasa.NasaError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TareaAPINasa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gloriaflaquegarcia/Desktop/TareaAPI/TareaAPINasa/TareaAPINasa/ApiNasaRequest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "101">
+               </Location>
+               <Location
+                  uuid = "0EEB35F4-8122-495F-AFE6-5D0B233737B0 - 6717a7dd841dcf0f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TareaAPINasa.ApiNasaNameRequest.getData(completion: (Swift.Result&lt;Swift.Array&lt;TareaAPINasa.ItemsDatails&gt;, TareaAPINasa.NasaError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TareaAPINasa"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gloriaflaquegarcia/Desktop/TareaAPI/TareaAPINasa/TareaAPINasa/ApiNasaRequest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "115">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

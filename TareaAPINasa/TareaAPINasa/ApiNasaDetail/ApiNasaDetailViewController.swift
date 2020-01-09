@@ -13,6 +13,7 @@ class ApiNasaDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var presenter: ApiNasaDetailPresenter?
     
     override func viewDidLoad() {
@@ -37,6 +38,10 @@ class ApiNasaDetailViewController: UIViewController {
 }
 
 extension ApiNasaDetailViewController: ApiNasaDetailView {
+    func setupUI() {
+        self.activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.startAnimating()
+    }
     func show(day: [Info]) {
         for i in day {
             self.titleLabel.text = i.title
@@ -44,13 +49,14 @@ extension ApiNasaDetailViewController: ApiNasaDetailView {
             self.descriptionLabel.text = "Explanation: \(i.explanation)"
             let url = URL(string: i.hdurl)
             DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: url!){
-                    if let image = UIImage(data: data){
-                        DispatchQueue.main.async {
-                            self.nasaImg.image = image
-                        }
-                    }
-                }
+//                if let data = try? Data(from: url){
+//                    if let image = UIImage(data: data){
+//                        DispatchQueue.main.async {
+//                            self.nasaImg.image = image
+//                            self.activityIndicator.stopAnimating()
+//                        }
+//                    }
+//                }
             }
         }
     }

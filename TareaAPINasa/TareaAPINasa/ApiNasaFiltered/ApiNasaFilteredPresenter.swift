@@ -34,7 +34,7 @@ init(view: ApiNasaFilteredView, wireframe: ApiNasaFilteredWireframe) {
         }
     }
     
-    func navigateToApiNasaDetail(day: [Info]) {
+    func navigateToApiNasaDetail(day: [ItemsDatails]) {
         self.wireframe.navigateToDetail(day: day)
     }
 }

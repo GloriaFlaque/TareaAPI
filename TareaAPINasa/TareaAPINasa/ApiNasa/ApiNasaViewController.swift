@@ -11,7 +11,7 @@ import UIKit
 class ApiNasaViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchButton: UIButton!
-       
+    
     let searchController = UISearchController(searchResultsController: nil)
     var presenter: ApiNasaPresenter?
     var days = ["2018-08-04", "2018-08-03", "2018-08-02", "2018-08-01", "2018-03-04", "2020-01-02"]
@@ -73,20 +73,27 @@ extension ApiNasaViewController: UITableViewDataSource, UITableViewDelegate {
         let cell: ApiNasaCell = tableView.dequeueReusableCell(withIdentifier: "apiNasaCell", for: indexPath) as! ApiNasaCell
             let info = listInfo[indexPath.row]
             for i in info{
+                cell.activityIndicator.hidesWhenStopped = true
+                cell.activityIndicator.startAnimating()
                 cell.titleLabel.text = i.title
                 cell.dateLabel.text = i.date
-                let url = URL(string: i.hdurl)
-                DispatchQueue.global().async {
-                    if let data = try? Data(contentsOf: url!){
-                        if let image = UIImage(data: data){
-                            DispatchQueue.main.async {
-                                cell.nasaImg.image = image
-                            }
-                        }
-                    }
-                }
+//                let url = URL(string: i.hdurl)
+//                DispatchQueue.global().async {
+//                    if let data = try? Data(from: url!){
+//                        if let image = UIImage(data: data){
+//                            DispatchQueue.main.async {
+//                                cell.nasaImg.image = image
+//                                cell.activityIndicator.stopAnimating()
+//                            }
+//                        }
+//                    }
+//                }
             }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 133.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

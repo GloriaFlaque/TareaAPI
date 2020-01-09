@@ -10,13 +10,13 @@ import UIKit
 
 /// Wireframe protocol to define routing to other scenes.
 protocol ApiNasaFilteredWireframe: class {
-    func navigateToDetail(day: [Info])
+    func navigateToDetail(day: [ItemsDatails])
 }
 
 // MARK: - UIViewController extension to implement wireframe protocol.
 extension ApiNasaFilteredViewController: ApiNasaFilteredWireframe {
     
-    func navigateToDetail(day: [Info]) {
+    func navigateToDetail(day: [ItemsDatails]) {
         self.performSegue(withIdentifier: "ShowDetailFiltered", sender: day)
     }
     
