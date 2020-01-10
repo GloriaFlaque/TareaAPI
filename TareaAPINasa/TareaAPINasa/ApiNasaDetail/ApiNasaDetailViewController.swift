@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ApiNasaDetailViewController: UIViewController {
     @IBOutlet weak var nasaImg: UIImageView!
@@ -48,15 +49,9 @@ extension ApiNasaDetailViewController: ApiNasaDetailView {
             self.dateLabel.text = "Date: \(i.date)"
             self.descriptionLabel.text = "Explanation: \(i.explanation)"
             let url = URL(string: i.hdurl)
-            DispatchQueue.global().async {
-//                if let data = try? Data(from: url){
-//                    if let image = UIImage(data: data){
-//                        DispatchQueue.main.async {
-//                            self.nasaImg.image = image
-//                            self.activityIndicator.stopAnimating()
-//                        }
-//                    }
-//                }
+            DispatchQueue.main.async {
+                self.nasaImg.kf.setImage(with: url)
+                self.activityIndicator.stopAnimating()
             }
         }
     }

@@ -12,10 +12,12 @@ class ApiNasaPresenter: Presenter {
 
 fileprivate weak var view: ApiNasaView!
 fileprivate weak var wireframe: ApiNasaWireframe!
+fileprivate var apiInteractor: ApiNasaDayInteractor!
 
-init(view: ApiNasaView, wireframe: ApiNasaWireframe) {
+    init(view: ApiNasaView, wireframe: ApiNasaWireframe, apiInteractor: ApiNasaDayInteractor) {
     self.view = view
     self.wireframe = wireframe
+    self.apiInteractor = apiInteractor
 }
 
     func viewDidUpdate(status: ViewStatus) {
@@ -40,5 +42,17 @@ init(view: ApiNasaView, wireframe: ApiNasaWireframe) {
     
     func navigateToApiNasaSearch() {
         self.wireframe.navigateToSearch()
+    }
+    
+    func showApiDayInfo(conceptCode: String) {
+        self.apiInteractor.reatriveApiInformation(conceptCode: conceptCode) { (result, info)  in
+            switch result {
+            case .success:
+                guard let infoNasa = info else { return }
+                self.wireframe.passInfo(info: infoNasa)
+            case .error:
+                break
+            }
+        }
     }
 }

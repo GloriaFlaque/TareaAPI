@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ApiNasaViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -50,17 +51,21 @@ class ApiNasaViewController: UIViewController {
 
 extension ApiNasaViewController: ApiNasaView {
     func setupUI() {
-        for i in days{
-            let infoRequest = ApiNasaRequest(dateCode: i)
-            infoRequest.getData { [weak self] result in
-                switch result{
-                case .failure(let error):
-                    print(error)
-                case .success(let info):
-                    self?.listInfo.append(info)
-                }
-            }
+        for i in days {
+            self.presenter?.showApiDayInfo(conceptCode: i)
         }
+        
+//        for i in days{
+//            let infoRequest = ApiNasaRequest(dateCode: i)
+//            infoRequest.getData { [weak self] result in
+//                switch result{
+//                case .failure(let error):
+//                    print(error)
+//                case .success(let info):
+//                    self?.listInfo.append(info)
+//                }
+//            }
+//        }
     }
 }
 
@@ -77,17 +82,9 @@ extension ApiNasaViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.activityIndicator.startAnimating()
                 cell.titleLabel.text = i.title
                 cell.dateLabel.text = i.date
-//                let url = URL(string: i.hdurl)
-//                DispatchQueue.global().async {
-//                    if let data = try? Data(from: url!){
-//                        if let image = UIImage(data: data){
-//                            DispatchQueue.main.async {
-//                                cell.nasaImg.image = image
-//                                cell.activityIndicator.stopAnimating()
-//                            }
-//                        }
-//                    }
-//                }
+                let url = URL(string: i.hdurl)
+                cell.nasaImg.kf.setImage(with: url)
+                cell.activityIndicator.stopAnimating()
             }
         return cell
     }

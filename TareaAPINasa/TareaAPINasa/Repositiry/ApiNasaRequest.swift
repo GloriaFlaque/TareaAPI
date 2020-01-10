@@ -52,18 +52,18 @@ struct ApiNasaNameRequest {
     }
     
     func getData (completion: @escaping(Result<[ItemsDatails], NasaError>) -> Void) {
-        let dataTask = URLSession.shared.dataTask(with: resourceURL) {data, _, _ in
+        let dataTask = URLSession.shared.dataTask(with: resourceURL) {data, _, error in
             guard let jsonData = data else {
                 completion(.failure(.noDataAvailable))
                 return
             }
             do{
-                print("aaaaaaa")
                 let decoder = JSONDecoder()
                 let collectionResponse = try decoder.decode(CollectionInfo.self, from: jsonData)
                 let itemResponse = collectionResponse.collection.items
                 completion(.success(itemResponse))
             } catch {
+                
                 completion(.failure(.canNotProcessData))
             }
         }

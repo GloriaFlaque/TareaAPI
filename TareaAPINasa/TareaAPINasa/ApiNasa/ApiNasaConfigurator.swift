@@ -32,7 +32,7 @@ class ApiNasaConfigurator: Configurator {
     
     func prepareScene(viewController: UIViewController) {
         let presenter = ApiNasaPresenter(view: viewController as! ApiNasaView,
-                                         wireframe: viewController as! ApiNasaWireframe)
+                                         wireframe: viewController as! ApiNasaWireframe, apiInteractor: ApiNasaDayInteractorImpl(repository: ApiNasaDayDataRepository()))
         guard let apiNasaViewController = viewController as? ApiNasaViewController else {
             assertionFailure("Invalid UIViewController to prepare scene")
             return

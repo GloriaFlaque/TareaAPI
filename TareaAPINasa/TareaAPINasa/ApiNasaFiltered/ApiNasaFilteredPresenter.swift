@@ -12,10 +12,13 @@ class ApiNasaFilteredPresenter: Presenter {
 
 fileprivate weak var view: ApiNasaFilteredView!
 fileprivate weak var wireframe: ApiNasaFilteredWireframe!
+fileprivate var apiInteractor: ApiNasaImageInteractor!
+fileprivate var list: [ItemsDatails] = []
 
-init(view: ApiNasaFilteredView, wireframe: ApiNasaFilteredWireframe) {
+    init(view: ApiNasaFilteredView, wireframe: ApiNasaFilteredWireframe, nasaImageRequestResult: ApiNasaImageInteractor) {
     self.view = view
     self.wireframe = wireframe
+    self.apiInteractor = nasaImageRequestResult
 }
 
     func viewDidUpdate(status: ViewStatus) {
@@ -36,5 +39,24 @@ init(view: ApiNasaFilteredView, wireframe: ApiNasaFilteredWireframe) {
     
     func navigateToApiNasaDetail(day: [ItemsDatails]) {
         self.wireframe.navigateToDetail(day: day)
+    }
+    
+    func showApiImageInfo(conceptCode: String) {
+        self.apiInteractor.reatriveApiInformation(conceptCode: conceptCode) { (result, info)  in
+            switch result {
+            case .success:
+                guard let infoNasa = info else { return }
+                for x in infoNasa {
+                    for i in x.links {
+                        if !i.href.contains("video") {
+                            self.list.append(x)
+                            self.wireframe.passInfo(info: self.list)
+                        }
+                    }
+                }
+            case .error:
+                break
+            }
+        }
     }
 }

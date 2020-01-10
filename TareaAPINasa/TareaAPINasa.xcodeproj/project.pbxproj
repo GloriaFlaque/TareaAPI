@@ -30,13 +30,30 @@
 		2281BE2823B1222A00F88A1A /* ViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE2723B1222A00F88A1A /* ViewProtocol.swift */; };
 		2281BE2A23B1224800F88A1A /* FeedbackViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE2923B1224800F88A1A /* FeedbackViewProtocol.swift */; };
 		2281BE2C23B1227500F88A1A /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE2B23B1227500F88A1A /* Presenter.swift */; };
-		2281BE2E23B4B8C500F88A1A /* ApiNasa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE2D23B4B8C500F88A1A /* ApiNasa.swift */; };
-		2281BE3023B4D4B400F88A1A /* ApiNasaRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE2F23B4D4B400F88A1A /* ApiNasaRequest.swift */; };
 		2281BE3523B5EC4900F88A1A /* ApiNasaDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE3423B5EC4900F88A1A /* ApiNasaDetailConfigurator.swift */; };
 		2281BE3723B5EE1900F88A1A /* ApiNasaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE3623B5EE1900F88A1A /* ApiNasaDetailView.swift */; };
 		2281BE3923B5EE3F00F88A1A /* ApiNasaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE3823B5EE3F00F88A1A /* ApiNasaDetailViewController.swift */; };
 		2281BE3B23B5EE5500F88A1A /* ApiNasaDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE3A23B5EE5500F88A1A /* ApiNasaDetailPresenter.swift */; };
 		2281BE3D23B5EE6B00F88A1A /* ApiNasaDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281BE3C23B5EE6B00F88A1A /* ApiNasaDetailWireframe.swift */; };
+		22EA7CC323C723BE003E7560 /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CC223C723BE003E7560 /* Info.swift */; };
+		22EA7CC523C723DE003E7560 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CC423C723DE003E7560 /* Data.swift */; };
+		22EA7CC723C72406003E7560 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CC623C72406003E7560 /* Link.swift */; };
+		22EA7CC923C72423003E7560 /* ItemDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CC823C72422003E7560 /* ItemDetails.swift */; };
+		22EA7CCB23C72480003E7560 /* ItemsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CCA23C72480003E7560 /* ItemsInfo.swift */; };
+		22EA7CCD23C724A1003E7560 /* CollectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CCC23C724A1003E7560 /* CollectionInfo.swift */; };
+		22EA7CD023C728C1003E7560 /* ApiNasaImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CCF23C728C1003E7560 /* ApiNasaImageRepository.swift */; };
+		22EA7CD223C7298E003E7560 /* ApiNasaImageDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CD123C7298E003E7560 /* ApiNasaImageDataRepository.swift */; };
+		22EA7CD523C72DB3003E7560 /* ApiNasaImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CD423C72DB3003E7560 /* ApiNasaImageInteractor.swift */; };
+		22EA7CD723C72ED1003E7560 /* ApiNasaImageInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CD623C72ED1003E7560 /* ApiNasaImageInteractorImpl.swift */; };
+		22EA7CDB23C74F85003E7560 /* ApiNasaDayRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CDA23C74F85003E7560 /* ApiNasaDayRepository.swift */; };
+		22EA7CDD23C74F9C003E7560 /* ApiNasaDayDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CDC23C74F9C003E7560 /* ApiNasaDayDataRepository.swift */; };
+		22EA7CE123C7510A003E7560 /* ApiNasaDayInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CE023C7510A003E7560 /* ApiNasaDayInteractor.swift */; };
+		22EA7CE323C75164003E7560 /* ApiNasaDayInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CE223C75164003E7560 /* ApiNasaDayInteractorImpl.swift */; };
+		22EA7CE623C772E7003E7560 /* ApiNasaFilteredDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CE523C772E7003E7560 /* ApiNasaFilteredDetailConfigurator.swift */; };
+		22EA7CE823C77361003E7560 /* ApiNasaFilteredDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CE723C77361003E7560 /* ApiNasaFilteredDetailView.swift */; };
+		22EA7CEC23C773B4003E7560 /* ApiNasaFilteredDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CEB23C773B4003E7560 /* ApiNasaFilteredDetailViewController.swift */; };
+		22EA7CEE23C773CA003E7560 /* ApiNasaFilteredDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CED23C773CA003E7560 /* ApiNasaFilteredDetailPresenter.swift */; };
+		22EA7CF023C773DD003E7560 /* ApiNasaFilteredDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EA7CEF23C773DD003E7560 /* ApiNasaFilteredDetailWireframe.swift */; };
 		940E1E4B267DED495C0D1EEC /* Pods_TareaAPINasa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CAD0D0D12D38AB7EFE789B /* Pods_TareaAPINasa.framework */; };
 		B4B0971702F7BEB33E5DFB7A /* Pods_TareaAPINasaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FB26D372E9FDA66A44791BC /* Pods_TareaAPINasaTests.framework */; };
 		F00CFB4432331DDFD69FAD4B /* Pods_TareaAPINasa_TareaAPINasaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C38913DFAB3132FE3744348 /* Pods_TareaAPINasa_TareaAPINasaUITests.framework */; };
@@ -91,13 +108,30 @@
 		2281BE2723B1222A00F88A1A /* ViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProtocol.swift; sourceTree = "<group>"; };
 		2281BE2923B1224800F88A1A /* FeedbackViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewProtocol.swift; sourceTree = "<group>"; };
 		2281BE2B23B1227500F88A1A /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
-		2281BE2D23B4B8C500F88A1A /* ApiNasa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasa.swift; sourceTree = "<group>"; };
-		2281BE2F23B4D4B400F88A1A /* ApiNasaRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaRequest.swift; sourceTree = "<group>"; };
 		2281BE3423B5EC4900F88A1A /* ApiNasaDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDetailConfigurator.swift; sourceTree = "<group>"; };
 		2281BE3623B5EE1900F88A1A /* ApiNasaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDetailView.swift; sourceTree = "<group>"; };
 		2281BE3823B5EE3F00F88A1A /* ApiNasaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDetailViewController.swift; sourceTree = "<group>"; };
 		2281BE3A23B5EE5500F88A1A /* ApiNasaDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDetailPresenter.swift; sourceTree = "<group>"; };
 		2281BE3C23B5EE6B00F88A1A /* ApiNasaDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDetailWireframe.swift; sourceTree = "<group>"; };
+		22EA7CC223C723BE003E7560 /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		22EA7CC423C723DE003E7560 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		22EA7CC623C72406003E7560 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		22EA7CC823C72422003E7560 /* ItemDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetails.swift; sourceTree = "<group>"; };
+		22EA7CCA23C72480003E7560 /* ItemsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsInfo.swift; sourceTree = "<group>"; };
+		22EA7CCC23C724A1003E7560 /* CollectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionInfo.swift; sourceTree = "<group>"; };
+		22EA7CCF23C728C1003E7560 /* ApiNasaImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaImageRepository.swift; sourceTree = "<group>"; };
+		22EA7CD123C7298E003E7560 /* ApiNasaImageDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaImageDataRepository.swift; sourceTree = "<group>"; };
+		22EA7CD423C72DB3003E7560 /* ApiNasaImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaImageInteractor.swift; sourceTree = "<group>"; };
+		22EA7CD623C72ED1003E7560 /* ApiNasaImageInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaImageInteractorImpl.swift; sourceTree = "<group>"; };
+		22EA7CDA23C74F85003E7560 /* ApiNasaDayRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDayRepository.swift; sourceTree = "<group>"; };
+		22EA7CDC23C74F9C003E7560 /* ApiNasaDayDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDayDataRepository.swift; sourceTree = "<group>"; };
+		22EA7CE023C7510A003E7560 /* ApiNasaDayInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDayInteractor.swift; sourceTree = "<group>"; };
+		22EA7CE223C75164003E7560 /* ApiNasaDayInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaDayInteractorImpl.swift; sourceTree = "<group>"; };
+		22EA7CE523C772E7003E7560 /* ApiNasaFilteredDetailConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaFilteredDetailConfigurator.swift; sourceTree = "<group>"; };
+		22EA7CE723C77361003E7560 /* ApiNasaFilteredDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaFilteredDetailView.swift; sourceTree = "<group>"; };
+		22EA7CEB23C773B4003E7560 /* ApiNasaFilteredDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaFilteredDetailViewController.swift; sourceTree = "<group>"; };
+		22EA7CED23C773CA003E7560 /* ApiNasaFilteredDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaFilteredDetailPresenter.swift; sourceTree = "<group>"; };
+		22EA7CEF23C773DD003E7560 /* ApiNasaFilteredDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiNasaFilteredDetailWireframe.swift; sourceTree = "<group>"; };
 		2C38913DFAB3132FE3744348 /* Pods_TareaAPINasa_TareaAPINasaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TareaAPINasa_TareaAPINasaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62CAD0D0D12D38AB7EFE789B /* Pods_TareaAPINasa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TareaAPINasa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FB26D372E9FDA66A44791BC /* Pods_TareaAPINasaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TareaAPINasaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,15 +210,17 @@
 				2281BE2423B121DD00F88A1A /* Arquitecture */,
 				2281BE0B23B11E8000F88A1A /* ApiNasa */,
 				2281BE3323B5EC2900F88A1A /* ApiNasaDetail */,
+				22EA7CE423C77286003E7560 /* ApiNasaFilteredDetail */,
 				221BB32B23C10DD000871C18 /* ApiNasaFiltered */,
+				22EA7CD323C72D6B003E7560 /* Interactor */,
+				22EA7CC123C7232F003E7560 /* Models */,
+				22EA7CCE23C727E1003E7560 /* Repositiry */,
 				2281BDD923B11DC800F88A1A /* AppDelegate.swift */,
 				2281BDDB23B11DC800F88A1A /* SceneDelegate.swift */,
 				2281BDDF23B11DC800F88A1A /* Main.storyboard */,
 				2281BDE223B11DC900F88A1A /* Assets.xcassets */,
 				2281BDE423B11DC900F88A1A /* LaunchScreen.storyboard */,
 				2281BDE723B11DC900F88A1A /* Info.plist */,
-				2281BE2D23B4B8C500F88A1A /* ApiNasa.swift */,
-				2281BE2F23B4D4B400F88A1A /* ApiNasaRequest.swift */,
 			);
 			path = TareaAPINasa;
 			sourceTree = "<group>";
@@ -243,6 +279,85 @@
 			path = ApiNasaDetail;
 			sourceTree = "<group>";
 		};
+		22EA7CC123C7232F003E7560 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22EA7CC223C723BE003E7560 /* Info.swift */,
+				22EA7CC423C723DE003E7560 /* Data.swift */,
+				22EA7CC623C72406003E7560 /* Link.swift */,
+				22EA7CC823C72422003E7560 /* ItemDetails.swift */,
+				22EA7CCA23C72480003E7560 /* ItemsInfo.swift */,
+				22EA7CCC23C724A1003E7560 /* CollectionInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22EA7CCE23C727E1003E7560 /* Repositiry */ = {
+			isa = PBXGroup;
+			children = (
+				22EA7CD923C74F4B003E7560 /* ApiNasaDay */,
+				22EA7CD823C74F37003E7560 /* ApiNasaImage */,
+			);
+			path = Repositiry;
+			sourceTree = "<group>";
+		};
+		22EA7CD323C72D6B003E7560 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				22EA7CDF23C750E2003E7560 /* ApiDay */,
+				22EA7CDE23C750CF003E7560 /* ApiNasaImage */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		22EA7CD823C74F37003E7560 /* ApiNasaImage */ = {
+			isa = PBXGroup;
+			children = (
+				22EA7CCF23C728C1003E7560 /* ApiNasaImageRepository.swift */,
+				22EA7CD123C7298E003E7560 /* ApiNasaImageDataRepository.swift */,
+			);
+			path = ApiNasaImage;
+			sourceTree = "<group>";
+		};
+		22EA7CD923C74F4B003E7560 /* ApiNasaDay */ = {
+			isa = PBXGroup;
+			children = (
+				22EA7CDA23C74F85003E7560 /* ApiNasaDayRepository.swift */,
+				22EA7CDC23C74F9C003E7560 /* ApiNasaDayDataRepository.swift */,
+			);
+			path = ApiNasaDay;
+			sourceTree = "<group>";
+		};
+		22EA7CDE23C750CF003E7560 /* ApiNasaImage */ = {
+			isa = PBXGroup;
+			children = (
+				22EA7CD423C72DB3003E7560 /* ApiNasaImageInteractor.swift */,
+				22EA7CD623C72ED1003E7560 /* ApiNasaImageInteractorImpl.swift */,
+			);
+			path = ApiNasaImage;
+			sourceTree = "<group>";
+		};
+		22EA7CDF23C750E2003E7560 /* ApiDay */ = {
+			isa = PBXGroup;
+			children = (
+				22EA7CE023C7510A003E7560 /* ApiNasaDayInteractor.swift */,
+				22EA7CE223C75164003E7560 /* ApiNasaDayInteractorImpl.swift */,
+			);
+			path = ApiDay;
+			sourceTree = "<group>";
+		};
+		22EA7CE423C77286003E7560 /* ApiNasaFilteredDetail */ = {
+			isa = PBXGroup;
+			children = (
+				22EA7CE523C772E7003E7560 /* ApiNasaFilteredDetailConfigurator.swift */,
+				22EA7CE723C77361003E7560 /* ApiNasaFilteredDetailView.swift */,
+				22EA7CEB23C773B4003E7560 /* ApiNasaFilteredDetailViewController.swift */,
+				22EA7CED23C773CA003E7560 /* ApiNasaFilteredDetailPresenter.swift */,
+				22EA7CEF23C773DD003E7560 /* ApiNasaFilteredDetailWireframe.swift */,
+			);
+			path = ApiNasaFilteredDetail;
+			sourceTree = "<group>";
+		};
 		3E9741DE8E37D6F944A292BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +392,7 @@
 				2281BDD223B11DC800F88A1A /* Sources */,
 				2281BDD323B11DC800F88A1A /* Frameworks */,
 				2281BDD423B11DC800F88A1A /* Resources */,
+				3E3F9B88F8214AE50A56B691 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,6 +430,7 @@
 				2281BDF323B11DC900F88A1A /* Sources */,
 				2281BDF423B11DC900F88A1A /* Frameworks */,
 				2281BDF523B11DC900F88A1A /* Resources */,
+				9118AFAC7C3C4CE043989AF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -418,6 +535,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3E3F9B88F8214AE50A56B691 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TareaAPINasa/Pods-TareaAPINasa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TareaAPINasa/Pods-TareaAPINasa-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TareaAPINasa/Pods-TareaAPINasa-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6EE6121CDF47E795A8587140 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,6 +596,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9118AFAC7C3C4CE043989AF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TareaAPINasa-TareaAPINasaUITests/Pods-TareaAPINasa-TareaAPINasaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TareaAPINasa-TareaAPINasaUITests/Pods-TareaAPINasa-TareaAPINasaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TareaAPINasa-TareaAPINasaUITests/Pods-TareaAPINasa-TareaAPINasaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -470,30 +621,47 @@
 			buildActionMask = 2147483647;
 			files = (
 				2281BE3D23B5EE6B00F88A1A /* ApiNasaDetailWireframe.swift in Sources */,
+				22EA7CE823C77361003E7560 /* ApiNasaFilteredDetailView.swift in Sources */,
 				221BB33123C111E800871C18 /* ApiNasaFilteredViewController.swift in Sources */,
+				22EA7CDB23C74F85003E7560 /* ApiNasaDayRepository.swift in Sources */,
 				2281BE1F23B11F1D00F88A1A /* ApiNasaView.swift in Sources */,
+				22EA7CC323C723BE003E7560 /* Info.swift in Sources */,
+				22EA7CF023C773DD003E7560 /* ApiNasaFilteredDetailWireframe.swift in Sources */,
 				2281BE1923B11EE000F88A1A /* ApiNasaCell.swift in Sources */,
 				2281BE1D23B11F0C00F88A1A /* ApiNasaConfigurator.swift in Sources */,
 				2281BE1B23B11EF400F88A1A /* ApiNasaViewController.swift in Sources */,
 				2281BDDA23B11DC800F88A1A /* AppDelegate.swift in Sources */,
-				2281BE3023B4D4B400F88A1A /* ApiNasaRequest.swift in Sources */,
+				22EA7CEC23C773B4003E7560 /* ApiNasaFilteredDetailViewController.swift in Sources */,
 				2281BE2123B11F3700F88A1A /* ApiNasaPresenter.swift in Sources */,
 				2281BE3B23B5EE5500F88A1A /* ApiNasaDetailPresenter.swift in Sources */,
 				221BB32D23C10E0D00871C18 /* ApiNasaFilteredConfigurator.swift in Sources */,
 				2281BE2A23B1224800F88A1A /* FeedbackViewProtocol.swift in Sources */,
 				2281BE2323B11F4500F88A1A /* ApiNasaWireframe.swift in Sources */,
+				22EA7CD523C72DB3003E7560 /* ApiNasaImageInteractor.swift in Sources */,
 				2281BE2623B1220800F88A1A /* Configurator.swift in Sources */,
+				22EA7CC723C72406003E7560 /* Link.swift in Sources */,
 				2281BE2C23B1227500F88A1A /* Presenter.swift in Sources */,
 				2281BE2823B1222A00F88A1A /* ViewProtocol.swift in Sources */,
 				2281BE3523B5EC4900F88A1A /* ApiNasaDetailConfigurator.swift in Sources */,
 				221BB33323C1120000871C18 /* ApiNasaFilteredPresenter.swift in Sources */,
+				22EA7CE323C75164003E7560 /* ApiNasaDayInteractorImpl.swift in Sources */,
+				22EA7CD223C7298E003E7560 /* ApiNasaImageDataRepository.swift in Sources */,
+				22EA7CCD23C724A1003E7560 /* CollectionInfo.swift in Sources */,
 				2281BE3723B5EE1900F88A1A /* ApiNasaDetailView.swift in Sources */,
+				22EA7CDD23C74F9C003E7560 /* ApiNasaDayDataRepository.swift in Sources */,
 				221BB32F23C111C500871C18 /* ApiNasaFilteredView.swift in Sources */,
+				22EA7CD023C728C1003E7560 /* ApiNasaImageRepository.swift in Sources */,
 				2281BE3923B5EE3F00F88A1A /* ApiNasaDetailViewController.swift in Sources */,
-				2281BE2E23B4B8C500F88A1A /* ApiNasa.swift in Sources */,
+				22EA7CD723C72ED1003E7560 /* ApiNasaImageInteractorImpl.swift in Sources */,
+				22EA7CE623C772E7003E7560 /* ApiNasaFilteredDetailConfigurator.swift in Sources */,
 				2281BDDC23B11DC800F88A1A /* SceneDelegate.swift in Sources */,
 				221BB33723C27AEB00871C18 /* ApiNasaFilteredCell.swift in Sources */,
+				22EA7CE123C7510A003E7560 /* ApiNasaDayInteractor.swift in Sources */,
+				22EA7CC523C723DE003E7560 /* Data.swift in Sources */,
+				22EA7CEE23C773CA003E7560 /* ApiNasaFilteredDetailPresenter.swift in Sources */,
 				221BB33523C1121900871C18 /* ApiNasaFilteredWireframe.swift in Sources */,
+				22EA7CCB23C72480003E7560 /* ItemsInfo.swift in Sources */,
+				22EA7CC923C72423003E7560 /* ItemDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

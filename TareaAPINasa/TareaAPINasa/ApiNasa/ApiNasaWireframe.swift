@@ -12,6 +12,7 @@ import UIKit
 protocol ApiNasaWireframe: class {
     func navigateToDetail(day: [Info])
     func navigateToSearch()
+    func passInfo(info: [Info])
 }
 
 // MARK: - UIViewController extension to implement wireframe protocol.
@@ -32,5 +33,9 @@ extension ApiNasaViewController: ApiNasaWireframe {
         } else if let filterViewController = segue.destination as? ApiNasaFilteredViewController {
             ApiNasaFilteredConfigurator.shared.prepareScene(viewController: filterViewController)
         }
+    }
+    
+    func passInfo(info: [Info]) {
+        self.listInfo.append(info)
     }
 }

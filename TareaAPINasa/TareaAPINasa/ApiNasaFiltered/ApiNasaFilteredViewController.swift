@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ApiNasaFilteredViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -15,6 +16,7 @@ class ApiNasaFilteredViewController: UIViewController {
     let searchController = UISearchController(searchResultsController: nil)
     var presenter: ApiNasaFilteredPresenter?
     
+    var apiInteractor: ApiNasaImageInteractor!
     var collectionlist = [ItemsDatails]() {
         didSet {
             DispatchQueue.main.async {
@@ -45,7 +47,12 @@ class ApiNasaFilteredViewController: UIViewController {
 }
 extension ApiNasaFilteredViewController: ApiNasaFilteredView {
     func setupUI() {
-        searchBar.placeholder = "Search date"
+//        searchController.searchResultsUpdater = self as! UISearchResultsUpdating
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchBar.placeholder = "Search..."
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
     }
 }
 
@@ -55,28 +62,21 @@ extension ApiNasaFilteredViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ApiNasaFilteredCell = tableView.dequeueReusableCell(withIdentifier: "apiNasaFilteredCell", for: indexPath) as! ApiNasaFilteredCell
-            let info = collectionlist[indexPath.row]
+            let cell: ApiNasaFilteredCell = tableView.dequeueReusableCell(withIdentifier: "apiNasaFilteredCell", for: indexPath) as! ApiNasaFilteredCell
+
+        let info = collectionlist[indexPath.row]
             cell.activityIndicator.hidesWhenStopped = true
             cell.activityIndicator.startAnimating()
-        for i in info.data {
-            cell.titleLabel.text = i.title
-            cell.dateLabel.text = i.date_created
-        }
-        for i in info.link {
-            print(i.href)
-//            let url = URL(string: i.href)
-//            DispatchQueue.global().async {
-//                if let data = try? Data(contentsOf: url!){
-//                    if let image = UIImage(data: data){
-//                        DispatchQueue.main.async {
-//                            cell.nasaImg.image = image
-//                            cell.activityIndicator.stopAnimating()
-//                        }
-//                    }
-//                }
-//            }
-        }
+            for i in info.data {
+                cell.titleLabel.text = i.title
+                cell.dateLabel.text = i.date_created
+            }
+            for i in info.links {
+                print(i.href)
+                let url = URL(string: i.href)
+                cell.nasaImg.kf.setImage(with: url)
+                cell.activityIndicator.stopAnimating()
+            }
         return cell
     }
     
@@ -93,15 +93,19 @@ extension ApiNasaFilteredViewController: UITableViewDataSource, UITableViewDeleg
 extension ApiNasaFilteredViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = searchBar.text else {return}
-        let infoRequest = ApiNasaNameRequest(conceptCode: searchBarText)
-        infoRequest.getData { [weak self] result in
-            switch result{
-            case .failure(let error):
-                print(error)
-            case .success(let info):
-                print(info)
-                self?.collectionlist = info
-            }
-        }
+        self.presenter?.showApiImageInfo(conceptCode: searchBarText)
     }
+    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange seachText: String) {
+////        guard let searchBarText = seachText else {return}
+//        self.presenter?.showApiImageInfo(conceptCode: seachText)
+//    }
 }
+
+
+//extension ApiNasaFilteredViewController: UISearchResultsUpdating {
+//    func updateSearchResults(for sender: UISearchController) {
+//        guard let searchBarText = searchController.searchBar.text else {return}
+//        self.presenter?.showApiImageInfo(conceptCode: searchBarText)
+//    }
+//}
