@@ -2,12 +2,12 @@
 //  ApiNasaDetailView.swift
 //  TareaAPINasa
 //
-//  Created by Gloria Flaqué García on 27/12/2019.
-//  Copyright © 2019 Gloria Flaqué García. All rights reserved.
+//  Created by Gloria Flaqué García on 09/01/2020.
+//  Copyright © 2020 Gloria Flaqué García. All rights reserved.
 //
 
 import Foundation
 
-protocol ApiNasaDetailView: ViewProtocol, FeedbackViewProtocol {
-    func show(day: [Info])
+protocol ApiNasaDetailView: ViewProtocol {
+    func show(item: [ItemDetails])
 }

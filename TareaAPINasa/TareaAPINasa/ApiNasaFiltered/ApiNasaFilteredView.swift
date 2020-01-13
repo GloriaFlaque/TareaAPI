@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol ApiNasaFilteredView: ViewProtocol, FeedbackViewProtocol {
-    
+protocol ApiNasaFilteredView: ViewProtocol {
+    func passInfo(info: [ItemDetails])
 }

@@ -1,5 +1,5 @@
 //
-//  ApiNasaDayInteractor.swift
+//  ApiNasaInteractor.swift
 //  TareaAPINasa
 //
 //  Created by Gloria Flaqué García on 09/01/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum NasaDayRequestResult: Int {
+enum NasaImageRequestResult: Int {
     
     case success, error
     
@@ -18,7 +18,9 @@ enum NasaDayRequestResult: Int {
     }
 }
 
-protocol ApiNasaDayInteractor {
+protocol ApiNasaInteractor {
     
-    func reatriveApiInformation(conceptCode: String, output: @escaping (_ result: NasaDayRequestResult, _ list: [Info]?) -> Void)
+    func reatriveApiInformation(searchText: String, output: @escaping (_ result: NasaImageRequestResult, _ list: [ItemDetails]?) -> Void)
 }
+
+

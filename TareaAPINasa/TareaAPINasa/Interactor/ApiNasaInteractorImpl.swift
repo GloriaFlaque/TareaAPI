@@ -1,5 +1,5 @@
 //
-//  ApiNasaDayInteractorImpl.swift
+//  ApiNasaInteractorImpl.swift
 //  TareaAPINasa
 //
 //  Created by Gloria Flaqué García on 09/01/2020.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ApiNasaDayInteractorImpl: ApiNasaDayInteractor {
+class ApiNasaInteractorImpl: ApiNasaInteractor {
     
-    private var repository: ApiNasaDayRepository
+    private var repository: ApiNasaRepository
     
-    init(repository: ApiNasaDayRepository) {
+    init(repository: ApiNasaRepository) {
         self.repository = repository
     }
     
-    func reatriveApiInformation(conceptCode: String, output: @escaping (_ result: NasaDayRequestResult, _ list: [Info]?) -> Void) {
-        self.repository.getData(conceptCode: conceptCode) { (result, list)  in
+    func reatriveApiInformation(searchText: String, output: @escaping (_ result: NasaImageRequestResult, _ list: [ItemDetails]?) -> Void) {
+        self.repository.getData(searchText: searchText) { (result, list)  in
             switch result{
             case .failure(let error):
                 print(error)

@@ -1,5 +1,5 @@
 //
-//  ApiNasaImageRepository.swift
+//  ApiNasaRepository.swift
 //  TareaAPINasa
 //
 //  Created by Gloria Flaqué García on 09/01/2020.
@@ -13,6 +13,6 @@ enum NasaImageError: Error {
     case canNotProcessData
 }
 
-protocol ApiNasaImageRepository {
-    func getData (conceptCode: String, completion: @escaping(Result<[ItemsDatails], NasaImageError>, [ItemsDatails]?) -> Void)
+protocol ApiNasaRepository {
+    func getData (searchText: String, completion: @escaping(Result<[ItemDetails], NasaImageError>, [ItemDetails]?) -> Void)
 }

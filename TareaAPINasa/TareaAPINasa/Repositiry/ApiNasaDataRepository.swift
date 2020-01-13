@@ -1,5 +1,5 @@
 //
-//  ApiNasaDayDataRepository.swift
+//  ApiNasaDataRepository.swift
 //  TareaAPINasa
 //
 //  Created by Gloria Flaqué García on 09/01/2020.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-class ApiNasaDayDataRepository: ApiNasaDayRepository {
+class ApiNasaDataRepository: ApiNasaRepository {
     
-    func getData (conceptCode: String, completion: @escaping(Result<[Info], NasaImageError>, [Info]?) -> Void) {
-        let resourceString = "https://api.nasa.gov/planetary/apod?date=\(conceptCode)&hd=True&api_key=UTF2I6JZm2mafnf8rYbibCa6kwg4fW88hm0Nwqf7"
+    func getData (searchText: String, completion: @escaping(Result<[ItemDetails], NasaImageError>, [ItemDetails]?) -> Void) {
+        let resourceString = "https://images-api.nasa.gov/search?q=\(searchText)"
         guard let resourceURL = URL(string: resourceString) else {fatalError()}
         
         let dataTask = URLSession.shared.dataTask(with: resourceURL) {data, _, error in
@@ -21,9 +21,11 @@ class ApiNasaDayDataRepository: ApiNasaDayRepository {
             }
             do{
                 let decoder = JSONDecoder()
-                let infoResponse = try decoder.decode(Info.self, from: jsonData)
-                completion(.success([infoResponse]), [infoResponse])
+                let collectionResponse = try decoder.decode(CollectionInfo.self, from: jsonData)
+                let itemResponse = collectionResponse.collection.items
+                completion(.success(itemResponse), itemResponse)
             } catch {
+                
                 completion(.failure(.canNotProcessData), nil)
             }
         }

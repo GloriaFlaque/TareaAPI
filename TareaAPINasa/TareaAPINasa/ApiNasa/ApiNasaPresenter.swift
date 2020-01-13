@@ -12,13 +12,13 @@ class ApiNasaPresenter: Presenter {
 
 fileprivate weak var view: ApiNasaView!
 fileprivate weak var wireframe: ApiNasaWireframe!
-fileprivate var apiInteractor: ApiNasaDayInteractor!
+fileprivate var apiInteractor: ApiNasaInteractor!
 
-    init(view: ApiNasaView, wireframe: ApiNasaWireframe, apiInteractor: ApiNasaDayInteractor) {
-    self.view = view
-    self.wireframe = wireframe
-    self.apiInteractor = apiInteractor
-}
+    init(view: ApiNasaView, wireframe: ApiNasaWireframe, apiInteractor: ApiNasaInteractor) {
+        self.view = view
+        self.wireframe = wireframe
+        self.apiInteractor = apiInteractor
+    }
 
     func viewDidUpdate(status: ViewStatus) {
         switch status {
@@ -36,20 +36,19 @@ fileprivate var apiInteractor: ApiNasaDayInteractor!
         }
     }
     
-    func navigateToApiNasaDetail(day: [Info]) {
-        self.wireframe.navigateToDetail(day: day)
+    func navigateToApiNasaDetail(item: [ItemDetails]) {
+        self.wireframe.navigateToDetail(item: item)
     }
     
     func navigateToApiNasaSearch() {
         self.wireframe.navigateToSearch()
     }
     
-    func showApiDayInfo(conceptCode: String) {
-        self.apiInteractor.reatriveApiInformation(conceptCode: conceptCode) { (result, info)  in
+    func showApiImageInfo(searchText: String) {
+        self.apiInteractor.reatriveApiInformation(searchText: searchText) { (result, info)  in
             switch result {
             case .success:
-                guard let infoNasa = info else { return }
-                self.wireframe.passInfo(info: infoNasa)
+                self.view.passInfo(info: info!)
             case .error:
                 break
             }

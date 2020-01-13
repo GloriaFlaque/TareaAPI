@@ -15,8 +15,7 @@ class ApiNasaViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     var presenter: ApiNasaPresenter?
-    var days = ["2018-08-04", "2018-08-03", "2018-08-02", "2018-08-01", "2018-03-04", "2020-01-02"]
-    var listInfo = [[Info]]() {
+    var listInfo = [ItemDetails]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -50,22 +49,13 @@ class ApiNasaViewController: UIViewController {
 }
 
 extension ApiNasaViewController: ApiNasaView {
+    func passInfo(info: [ItemDetails]) {
+        self.listInfo = info
+    }
+    
     func setupUI() {
-        for i in days {
-            self.presenter?.showApiDayInfo(conceptCode: i)
-        }
-        
-//        for i in days{
-//            let infoRequest = ApiNasaRequest(dateCode: i)
-//            infoRequest.getData { [weak self] result in
-//                switch result{
-//                case .failure(let error):
-//                    print(error)
-//                case .success(let info):
-//                    self?.listInfo.append(info)
-//                }
-//            }
-//        }
+        tableView.register(UINib(nibName: "NasaCell", bundle: nil), forCellReuseIdentifier: "nasaCell")
+        self.presenter?.showApiImageInfo(searchText: "Sun")
     }
 }
 
@@ -75,16 +65,23 @@ extension ApiNasaViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ApiNasaCell = tableView.dequeueReusableCell(withIdentifier: "apiNasaCell", for: indexPath) as! ApiNasaCell
+        let cell: NasaCell = tableView.dequeueReusableCell(withIdentifier: "nasaCell", for: indexPath) as! NasaCell
             let info = listInfo[indexPath.row]
-            for i in info{
-                cell.activityIndicator.hidesWhenStopped = true
-                cell.activityIndicator.startAnimating()
+            cell.activityIndicator.hidesWhenStopped = true
+            cell.activityIndicator.startAnimating()
+            for i in info.data {
                 cell.titleLabel.text = i.title
-                cell.dateLabel.text = i.date
-                let url = URL(string: i.hdurl)
-                cell.nasaImg.kf.setImage(with: url)
-                cell.activityIndicator.stopAnimating()
+                cell.dateLabel.text = i.date_created
+            }
+            for i in info.links {
+                if i.href.contains("video") {
+                    cell.nasaImg.image = UIImage(named: "nasa")
+                    cell.activityIndicator.stopAnimating()
+                } else {
+                    let url = URL(string: i.href)
+                    cell.nasaImg.kf.setImage(with: url)
+                    cell.activityIndicator.stopAnimating()
+                }
             }
         return cell
     }
@@ -95,6 +92,6 @@ extension ApiNasaViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        self.presenter?.navigateToApiNasaDetail(day: listInfo[indexPath.row])
+        self.presenter?.navigateToApiNasaDetail(item: [listInfo[indexPath.row]])
     }
 }

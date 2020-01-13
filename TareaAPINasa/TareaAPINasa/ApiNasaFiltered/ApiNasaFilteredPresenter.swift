@@ -12,14 +12,13 @@ class ApiNasaFilteredPresenter: Presenter {
 
 fileprivate weak var view: ApiNasaFilteredView!
 fileprivate weak var wireframe: ApiNasaFilteredWireframe!
-fileprivate var apiInteractor: ApiNasaImageInteractor!
-fileprivate var list: [ItemsDatails] = []
+fileprivate var apiInteractor: ApiNasaInteractor!
 
-    init(view: ApiNasaFilteredView, wireframe: ApiNasaFilteredWireframe, nasaImageRequestResult: ApiNasaImageInteractor) {
-    self.view = view
-    self.wireframe = wireframe
-    self.apiInteractor = nasaImageRequestResult
-}
+    init(view: ApiNasaFilteredView, wireframe: ApiNasaFilteredWireframe, nasaImageRequestResult: ApiNasaInteractor) {
+        self.view = view
+        self.wireframe = wireframe
+        self.apiInteractor = nasaImageRequestResult
+    }
 
     func viewDidUpdate(status: ViewStatus) {
         switch status {
@@ -37,23 +36,15 @@ fileprivate var list: [ItemsDatails] = []
         }
     }
     
-    func navigateToApiNasaDetail(day: [ItemsDatails]) {
+    func navigateToApiNasaDetail(day: [ItemDetails]) {
         self.wireframe.navigateToDetail(day: day)
     }
     
-    func showApiImageInfo(conceptCode: String) {
-        self.apiInteractor.reatriveApiInformation(conceptCode: conceptCode) { (result, info)  in
+    func showApiImageInfo(searchText: String) {
+        self.apiInteractor.reatriveApiInformation(searchText: searchText) { (result, info)  in
             switch result {
             case .success:
-                guard let infoNasa = info else { return }
-                for x in infoNasa {
-                    for i in x.links {
-                        if !i.href.contains("video") {
-                            self.list.append(x)
-                            self.wireframe.passInfo(info: self.list)
-                        }
-                    }
-                }
+                self.view.passInfo(info: info!)
             case .error:
                 break
             }

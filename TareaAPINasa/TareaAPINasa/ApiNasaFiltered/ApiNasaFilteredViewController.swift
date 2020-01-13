@@ -15,9 +15,7 @@ class ApiNasaFilteredViewController: UIViewController {
        
     let searchController = UISearchController(searchResultsController: nil)
     var presenter: ApiNasaFilteredPresenter?
-    
-    var apiInteractor: ApiNasaImageInteractor!
-    var collectionlist = [ItemsDatails]() {
+    var collectionlist = [ItemDetails]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -47,13 +45,17 @@ class ApiNasaFilteredViewController: UIViewController {
 }
 extension ApiNasaFilteredViewController: ApiNasaFilteredView {
     func setupUI() {
-//        searchController.searchResultsUpdater = self as! UISearchResultsUpdating
+        tableView.register(UINib(nibName: "NasaCell", bundle: nil), forCellReuseIdentifier: "nasaCell")
         searchController.obscuresBackgroundDuringPresentation = false
         searchBar.placeholder = "Search..."
         navigationItem.searchController = searchController
         definesPresentationContext = true
         navigationItem.hidesSearchBarWhenScrolling = false
     }
+    
+    func passInfo(info: [ItemDetails]) {
+            self.collectionlist = info
+        }
 }
 
 extension ApiNasaFilteredViewController: UITableViewDataSource, UITableViewDelegate {
@@ -62,8 +64,7 @@ extension ApiNasaFilteredViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell: ApiNasaFilteredCell = tableView.dequeueReusableCell(withIdentifier: "apiNasaFilteredCell", for: indexPath) as! ApiNasaFilteredCell
-
+        let cell: NasaCell = tableView.dequeueReusableCell(withIdentifier: "nasaCell", for: indexPath) as! NasaCell
         let info = collectionlist[indexPath.row]
             cell.activityIndicator.hidesWhenStopped = true
             cell.activityIndicator.startAnimating()
@@ -72,10 +73,13 @@ extension ApiNasaFilteredViewController: UITableViewDataSource, UITableViewDeleg
                 cell.dateLabel.text = i.date_created
             }
             for i in info.links {
-                print(i.href)
-                let url = URL(string: i.href)
-                cell.nasaImg.kf.setImage(with: url)
-                cell.activityIndicator.stopAnimating()
+                if i.href.contains("video") {
+                    cell.nasaImg.image = UIImage(named: "nasa")
+                } else {
+                    let url = URL(string: i.href)
+                    cell.nasaImg.kf.setImage(with: url)
+                    cell.activityIndicator.stopAnimating()
+                }
             }
         return cell
     }
@@ -93,19 +97,6 @@ extension ApiNasaFilteredViewController: UITableViewDataSource, UITableViewDeleg
 extension ApiNasaFilteredViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = searchBar.text else {return}
-        self.presenter?.showApiImageInfo(conceptCode: searchBarText)
+        self.presenter?.showApiImageInfo(searchText: searchBarText)
     }
-    
-//    func searchBar(_ searchBar: UISearchBar, textDidChange seachText: String) {
-////        guard let searchBarText = seachText else {return}
-//        self.presenter?.showApiImageInfo(conceptCode: seachText)
-//    }
 }
-
-
-//extension ApiNasaFilteredViewController: UISearchResultsUpdating {
-//    func updateSearchResults(for sender: UISearchController) {
-//        guard let searchBarText = searchController.searchBar.text else {return}
-//        self.presenter?.showApiImageInfo(conceptCode: searchBarText)
-//    }
-//}

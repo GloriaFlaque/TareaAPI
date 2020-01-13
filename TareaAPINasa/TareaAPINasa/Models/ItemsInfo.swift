@@ -9,5 +9,5 @@
 import Foundation
 
 struct ItemsInfo: Decodable {
-    var items: [ItemsDatails]
+    var items: [ItemDetails]
 }

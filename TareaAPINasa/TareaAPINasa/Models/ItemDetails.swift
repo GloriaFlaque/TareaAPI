@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ItemsDatails: Decodable {
+struct ItemDetails: Decodable {
     var data: [Data]
     var links: [Link]
 }

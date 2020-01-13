@@ -31,7 +31,7 @@ class ApiNasaFilteredConfigurator: Configurator {
     }
     
     func prepareScene(viewController: UIViewController) {
-        let presenter = ApiNasaFilteredPresenter(view: viewController as! ApiNasaFilteredView, wireframe: viewController as! ApiNasaFilteredWireframe, nasaImageRequestResult: ApiNasaImageInteractorImpl(repository: ApiNasaImageDataRepository()))
+        let presenter = ApiNasaFilteredPresenter(view: viewController as! ApiNasaFilteredView, wireframe: viewController as! ApiNasaFilteredWireframe, nasaImageRequestResult: ApiNasaInteractorImpl(repository: ApiNasaDataRepository()))
         guard let apiNasaFilteredViewController = viewController as? ApiNasaFilteredViewController else {
             assertionFailure("Invalid UIViewController to prepare scene")
             return

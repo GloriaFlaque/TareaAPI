@@ -10,16 +10,15 @@ import UIKit
 
 /// Wireframe protocol to define routing to other scenes.
 protocol ApiNasaWireframe: class {
-    func navigateToDetail(day: [Info])
+    func navigateToDetail(item: [ItemDetails])
     func navigateToSearch()
-    func passInfo(info: [Info])
 }
 
 // MARK: - UIViewController extension to implement wireframe protocol.
 extension ApiNasaViewController: ApiNasaWireframe {
     
-    func navigateToDetail(day: [Info]) {
-        self.performSegue(withIdentifier: "ShowDetail", sender: day)
+    func navigateToDetail(item: [ItemDetails]) {
+        self.performSegue(withIdentifier: "ShowDetail", sender: item)
     }
     
     func navigateToSearch() {
@@ -29,13 +28,9 @@ extension ApiNasaViewController: ApiNasaWireframe {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detailViewController = segue.destination as? ApiNasaDetailViewController {
             ApiNasaDetailConfigurator.shared.prepareScene(viewController: detailViewController)
-            detailViewController.presenter?.day = sender as! [Info]
+            detailViewController.presenter?.item = sender as! [ItemDetails]
         } else if let filterViewController = segue.destination as? ApiNasaFilteredViewController {
             ApiNasaFilteredConfigurator.shared.prepareScene(viewController: filterViewController)
         }
-    }
-    
-    func passInfo(info: [Info]) {
-        self.listInfo.append(info)
     }
 }
