@@ -1,5 +1,5 @@
 //
-//  Data.swift
+//  DataNasa.swift
 //  TareaAPINasa
 //
 //  Created by Gloria Flaqué García on 09/01/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Data: Decodable {
+struct DataNasa: Codable {
     var date_created: String
     var location: String?
     var description: String

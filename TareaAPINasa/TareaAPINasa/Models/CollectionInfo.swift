@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct CollectionInfo: Decodable {
+struct CollectionInfo: Codable {
     var collection: ItemsInfo
 }

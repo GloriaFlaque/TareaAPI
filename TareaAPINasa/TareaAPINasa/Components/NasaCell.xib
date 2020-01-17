@@ -17,43 +17,51 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLB-PC-M2r">
-                        <rect key="frame" x="187" y="22" width="207" height="60"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="60" id="zcp-C7-bCm"/>
-                        </constraints>
+                        <rect key="frame" x="160" y="15" width="234" height="18"/>
                         <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQo-Bh-SLc">
-                        <rect key="frame" x="187" y="97" width="217" height="18"/>
-                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQo-Bh-SLc">
+                        <rect key="frame" x="160" y="98" width="34.5" height="17"/>
+                        <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Ff-Rh-LHW">
-                        <rect key="frame" x="20" y="13" width="137" height="107"/>
+                        <rect key="frame" x="20" y="13" width="120" height="107"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="107" id="AtY-lZ-6U5"/>
-                            <constraint firstAttribute="width" constant="137" id="IsJ-wR-qP2"/>
+                            <constraint firstAttribute="width" constant="120" id="c4V-Va-E4u"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w02-qj-4db">
+                        <rect key="frame" x="374" y="85" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="g8M-Y7-yK5"/>
+                            <constraint firstAttribute="width" constant="30" id="rPx-5e-FeG"/>
+                        </constraints>
+                        <state key="normal" image="star"/>
+                        <connections>
+                            <action selector="clickFavoritesWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="1J7-ex-Ujq"/>
+                        </connections>
+                    </button>
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="bwZ-78-SBy">
-                        <rect key="frame" x="78.5" y="56.5" width="20" height="20"/>
+                        <rect key="frame" x="70" y="56.5" width="20" height="20"/>
                     </activityIndicatorView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="HLB-PC-M2r" firstAttribute="leading" secondItem="4Ff-Rh-LHW" secondAttribute="trailing" constant="30" id="47Q-bm-bwp"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="eQo-Bh-SLc" secondAttribute="bottom" constant="7" id="BUI-I8-gHz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="eQo-Bh-SLc" secondAttribute="bottom" constant="7" id="A80-sn-zOE"/>
                     <constraint firstAttribute="trailing" secondItem="HLB-PC-M2r" secondAttribute="trailing" constant="20" id="EiV-gI-Zqu"/>
+                    <constraint firstItem="w02-qj-4db" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="10" id="IzT-5w-AaM"/>
+                    <constraint firstItem="HLB-PC-M2r" firstAttribute="leading" secondItem="4Ff-Rh-LHW" secondAttribute="trailing" constant="20" id="J7y-wg-dg5"/>
+                    <constraint firstItem="eQo-Bh-SLc" firstAttribute="leading" secondItem="4Ff-Rh-LHW" secondAttribute="trailing" constant="20" id="Jda-pw-5Cn"/>
                     <constraint firstItem="4Ff-Rh-LHW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="KoV-de-Ska"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="w02-qj-4db" secondAttribute="bottom" constant="7" id="LcI-nC-emT"/>
                     <constraint firstAttribute="bottom" secondItem="4Ff-Rh-LHW" secondAttribute="bottom" constant="13" id="Qex-1O-Ein"/>
-                    <constraint firstItem="eQo-Bh-SLc" firstAttribute="leading" secondItem="4Ff-Rh-LHW" secondAttribute="trailing" constant="30" id="S5S-XH-OsI"/>
                     <constraint firstItem="4Ff-Rh-LHW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="UGi-oW-goV"/>
-                    <constraint firstItem="HLB-PC-M2r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="jyk-wz-tdj"/>
-                    <constraint firstItem="eQo-Bh-SLc" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="10" id="lhQ-ba-e1l"/>
-                    <constraint firstItem="bwZ-78-SBy" firstAttribute="centerY" secondItem="4Ff-Rh-LHW" secondAttribute="centerY" id="mPd-GX-tRo"/>
-                    <constraint firstItem="bwZ-78-SBy" firstAttribute="centerX" secondItem="4Ff-Rh-LHW" secondAttribute="centerX" id="xD9-Mh-BAU"/>
+                    <constraint firstItem="4Ff-Rh-LHW" firstAttribute="centerX" secondItem="bwZ-78-SBy" secondAttribute="centerX" id="guN-22-Jdz"/>
+                    <constraint firstItem="HLB-PC-M2r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="jyk-wz-tdj"/>
+                    <constraint firstItem="4Ff-Rh-LHW" firstAttribute="centerY" secondItem="bwZ-78-SBy" secondAttribute="centerY" id="xh8-uF-zea"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -61,9 +69,13 @@
                 <outlet property="activityIndicator" destination="bwZ-78-SBy" id="dXT-mY-6JU"/>
                 <outlet property="dateLabel" destination="eQo-Bh-SLc" id="6zT-j5-7EK"/>
                 <outlet property="nasaImg" destination="4Ff-Rh-LHW" id="ShK-pC-iGU"/>
+                <outlet property="starButton" destination="w02-qj-4db" id="kWD-HR-6Qt"/>
                 <outlet property="titleLabel" destination="HLB-PC-M2r" id="a6X-hm-ljw"/>
             </connections>
-            <point key="canvasLocation" x="69.565217391304358" y="131.58482142857142"/>
+            <point key="canvasLocation" x="50.724637681159422" y="72.65625"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="star" width="700" height="700"/>
+    </resources>
 </document>

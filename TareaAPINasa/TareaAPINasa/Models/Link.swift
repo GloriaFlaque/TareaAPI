@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Link: Decodable {
+struct Link: Codable {
     var href: String
 }

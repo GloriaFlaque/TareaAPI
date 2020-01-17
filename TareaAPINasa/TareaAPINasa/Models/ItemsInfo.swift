@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct ItemsInfo: Decodable {
+struct ItemsInfo: Codable {
     var items: [ItemDetails]
 }

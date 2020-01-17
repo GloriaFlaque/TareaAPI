@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// View protocol interface to enable comunication with view logic implementation (Presenter)
 protocol ApiNasaFilteredView: ViewProtocol {
-    func passInfo(info: [ItemDetails])
+    func passInfo(info: [ItemDefault])
 }

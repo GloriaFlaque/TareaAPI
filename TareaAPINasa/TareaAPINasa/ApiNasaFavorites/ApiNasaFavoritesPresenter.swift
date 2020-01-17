@@ -1,23 +1,23 @@
 //
-//  ApiNasaDetailPresenter.swift
+//  ApiNasaFavoritesPresenter.swift
 //  TareaAPINasa
 //
-//  Created by Gloria Flaqué García on 09/01/2020.
+//  Created by Gloria Flaqué García on 13/01/2020.
 //  Copyright © 2020 Gloria Flaqué García. All rights reserved.
 //
 
 import Foundation
 
 /// Presenter implementation to handle abstract scene view logic.
-class ApiNasaDetailPresenter: Presenter {
+class ApiNasaFavoritesPresenter: Presenter {
 
-    fileprivate weak var view: ApiNasaDetailView!
-    fileprivate weak var wireframe: ApiNasaDetailWireframe!
+    fileprivate weak var view: ApiNasaFavoritesView!
+    fileprivate weak var wireframe: ApiNasaFavoritesWireframe!
     fileprivate var apiInteractor: ApiNasaInteractor!
-    var item: ItemDefault!
     var delegate: RefreshTableProtocol?
+    var listInfo: [ItemDefault] = []
 
-    init(view: ApiNasaDetailView, wireframe: ApiNasaDetailWireframe, apiInteractor: ApiNasaInteractor) {
+    init(view: ApiNasaFavoritesView, wireframe: ApiNasaFavoritesWireframe, apiInteractor: ApiNasaInteractor) {
         self.view = view
         self.wireframe = wireframe
         self.apiInteractor = apiInteractor
@@ -33,7 +33,7 @@ class ApiNasaDetailPresenter: Presenter {
         case .didDisappear:
             break
         case .willAppear:
-            self.view.show(item: item)
+            break
         case .willDisappear:
             break
         }
@@ -50,11 +50,21 @@ class ApiNasaDetailPresenter: Presenter {
         }
     }
     
+    func navigateToApiNasaDetail(item: ItemDefault) {
+        self.wireframe.navigateToDetail(item: item)
+    }
+    
+    func getInfo() {
+        self.apiInteractor.reatriveFavorites() { (info) in
+            self.view.passInfo(info: info!)
+        }
+    }
+    
     func setInfo(info: ItemDefault) {
         self.apiInteractor.setFavorites(item: info) { (result, info)  in
             switch result {
             case .success:
-                self.delegate?.refreshFavorites(info: info!)
+                self.getInfo()
             case .error:
                 break
             }
@@ -65,10 +75,25 @@ class ApiNasaDetailPresenter: Presenter {
         self.apiInteractor.deleteFavorites(item: info) { (result, info)  in
             switch result {
             case .success:
-                self.delegate?.refreshFavorites(info: info!)
+                self.view.table(info: info!)
             case .error:
                 break
             }
         }
+    }
+}
+
+extension ApiNasaFavoritesPresenter: RefreshTableProtocol {
+    func refreshFavorites(info: [ItemDefault]) {
+        self.listInfo = info
+        self.performRetriveFavorites()
+    }
+}
+
+private extension ApiNasaFavoritesPresenter {
+    
+    func performRetriveFavorites() {
+        self.view.table(info: listInfo)
+        self.delegate?.refreshFiltered()
     }
 }

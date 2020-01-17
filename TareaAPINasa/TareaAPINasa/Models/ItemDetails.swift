@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct ItemDetails: Decodable {
-    var data: [Data]
+struct ItemDetails: Codable {
+    var data: [DataNasa]
     var links: [Link]
+//    var favorite = false
 }

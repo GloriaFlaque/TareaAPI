@@ -8,11 +8,15 @@
 
 import Foundation
 
+/// Presenter implementation to handle abstract scene view logic.
 class ApiNasaFilteredPresenter: Presenter {
 
-fileprivate weak var view: ApiNasaFilteredView!
-fileprivate weak var wireframe: ApiNasaFilteredWireframe!
-fileprivate var apiInteractor: ApiNasaInteractor!
+    fileprivate weak var view: ApiNasaFilteredView!
+    fileprivate weak var wireframe: ApiNasaFilteredWireframe!
+    fileprivate var apiInteractor: ApiNasaInteractor!
+    var delegate: RefreshTableProtocol?
+    var listInfo: [ItemDefault] = []
+    var filterList: [ItemDefault] = []
 
     init(view: ApiNasaFilteredView, wireframe: ApiNasaFilteredWireframe, nasaImageRequestResult: ApiNasaInteractor) {
         self.view = view
@@ -36,8 +40,8 @@ fileprivate var apiInteractor: ApiNasaInteractor!
         }
     }
     
-    func navigateToApiNasaDetail(day: [ItemDetails]) {
-        self.wireframe.navigateToDetail(day: day)
+    func navigateToApiNasaDetail(info: ItemDefault) {
+        self.wireframe.navigateToDetail(day: info)
     }
     
     func showApiImageInfo(searchText: String) {
@@ -49,5 +53,44 @@ fileprivate var apiInteractor: ApiNasaInteractor!
                 break
             }
         }
+    }
+    
+    func setInfo(info: ItemDefault) {
+        self.apiInteractor.setFavorites(item: info) { (result, info)  in
+            switch result {
+            case .success:
+                self.delegate?.refreshFiltered()
+                break
+            case .error:
+                break
+            }
+        }
+    }
+    
+    func deletInfo(info: ItemDefault) {
+        self.apiInteractor.deleteFavorites(item: info) { (result, info)  in
+            switch result {
+            case .success:
+                self.delegate?.refreshFiltered()
+                break
+            case .error:
+                break
+            }
+        }
+    }
+}
+
+extension ApiNasaFilteredPresenter: RefreshTableProtocol {
+    func refreshTable(info: [ItemDefault]) {
+        self.listInfo = info
+        self.performRetriveFavorites()
+    }
+}
+
+private extension ApiNasaFilteredPresenter {
+    
+    func performRetriveFavorites() {
+        self.view.passInfo(info: listInfo)
+        self.delegate?.refreshFiltered()
     }
 }

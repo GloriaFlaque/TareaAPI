@@ -32,7 +32,7 @@ class ApiNasaDetailConfigurator: Configurator {
     
     func prepareScene(viewController: UIViewController) {
         let presenter = ApiNasaDetailPresenter(view: viewController as! ApiNasaDetailView,
-                                         wireframe: viewController as! ApiNasaDetailWireframe)
+                                         wireframe: viewController as! ApiNasaDetailWireframe, apiInteractor: ApiNasaInteractorImpl(repository: ApiNasaDataRepository()))
         guard let apiNasaFilteredDetailViewController = viewController as? ApiNasaDetailViewController else {
             assertionFailure("Invalid UIViewController to prepare scene")
             return

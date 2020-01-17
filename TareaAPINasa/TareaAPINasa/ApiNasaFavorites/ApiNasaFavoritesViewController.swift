@@ -1,30 +1,18 @@
 //
-//  ApiNasaViewController.swift
+//  ApiNasaFavoritesViewController.swift
 //  TareaAPINasa
 //
-//  Created by Gloria Flaqué García on 23/12/2019.
-//  Copyright © 2019 Gloria Flaqué García. All rights reserved.
+//  Created by Gloria Flaqué García on 13/01/2020.
+//  Copyright © 2020 Gloria Flaqué García. All rights reserved.
 //
 
 import UIKit
-import Kingfisher
 
-class ApiNasaViewController: UIViewController {
+class ApiNasaFavoritesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var starButton: UIButton!
+    var presenter: ApiNasaFavoritesPresenter?
+    var favoritesList: [ItemDefault] = []
     var customTableView: CustomTableViewController?
-    
-    let searchController = UISearchController(searchResultsController: nil)
-    var presenter: ApiNasaPresenter?
-    var listInfo = [ItemDefault]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.customTableView!.items = self.listInfo
-                self.tableView.reloadData()
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,36 +33,32 @@ class ApiNasaViewController: UIViewController {
         super.viewDidDisappear(animated)
         self.presenter?.viewDidUpdate(status: .didDisappear)
     }
-    
-    @IBAction func clickFilter(sender: UIButton) {
-        self.presenter?.navigateToApiNasaSearch()
-    }
-    
-    @IBAction func clickFavorites(sender: UIButton) {
-        self.presenter?.navigateToApiNasaFavorites()
-    }
 }
 
-extension ApiNasaViewController: ApiNasaView {
+extension ApiNasaFavoritesViewController: ApiNasaFavoritesView {
     func passInfo(info: [ItemDefault]) {
-        self.listInfo = info
+        self.favoritesList = info
     }
     
     func setupUI() {
+        self.presenter?.getInfo()
         tableView.register(UINib(nibName: "NasaCell", bundle: nil), forCellReuseIdentifier: "nasaCell")
-        self.presenter?.showApiInfo(searchText: "Sun")
-        self.customTableView = CustomTableViewController(items: listInfo)
+        self.customTableView = CustomTableViewController(items: favoritesList)
         self.customTableView?.delegate = self
         self.tableView.dataSource = self.customTableView!
         self.tableView.delegate = self.customTableView!
     }
     
     func table(info: [ItemDefault]) {
-        self.listInfo = info
+        self.favoritesList = info
+        DispatchQueue.main.async {
+            self.customTableView!.items = info
+            self.tableView.reloadData()
+        }
     }
 }
 
-private extension ApiNasaViewController {
+private extension ApiNasaFavoritesViewController {
     func setImageandColorForButton(color: UIColor, button: UIButton) {
         let tintedImage = UIImage(named: "star")?.withRenderingMode(.alwaysTemplate)
         button.tintColor = color
@@ -82,7 +66,7 @@ private extension ApiNasaViewController {
     }
 }
 
-extension ApiNasaViewController: CustomTableViewControllerDeleagte {
+extension ApiNasaFavoritesViewController: CustomTableViewControllerDeleagte {
     func setInfo(item: ItemDefault) {
         self.presenter?.setInfo(info: item)
     }

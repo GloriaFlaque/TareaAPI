@@ -12,12 +12,15 @@ import Kingfisher
 class ApiNasaFilteredViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    var search: String!
+    var customTableView: CustomTableViewController?
        
     let searchController = UISearchController(searchResultsController: nil)
     var presenter: ApiNasaFilteredPresenter?
-    var collectionlist = [ItemDetails]() {
+    var collectionlist = [ItemDefault]() {
         didSet {
             DispatchQueue.main.async {
+                self.customTableView!.items = self.collectionlist
                 self.tableView.reloadData()
             }
         }
@@ -51,46 +54,14 @@ extension ApiNasaFilteredViewController: ApiNasaFilteredView {
         navigationItem.searchController = searchController
         definesPresentationContext = true
         navigationItem.hidesSearchBarWhenScrolling = false
+        self.customTableView = CustomTableViewController(items: collectionlist)
+        self.customTableView?.delegate = self
+        self.tableView.dataSource = self.customTableView!
+        self.tableView.delegate = self.customTableView!
     }
     
-    func passInfo(info: [ItemDetails]) {
-            self.collectionlist = info
-        }
-}
-
-extension ApiNasaFilteredViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return collectionlist.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: NasaCell = tableView.dequeueReusableCell(withIdentifier: "nasaCell", for: indexPath) as! NasaCell
-        let info = collectionlist[indexPath.row]
-            cell.activityIndicator.hidesWhenStopped = true
-            cell.activityIndicator.startAnimating()
-            for i in info.data {
-                cell.titleLabel.text = i.title
-                cell.dateLabel.text = i.date_created
-            }
-            for i in info.links {
-                if i.href.contains("video") {
-                    cell.nasaImg.image = UIImage(named: "nasa")
-                } else {
-                    let url = URL(string: i.href)
-                    cell.nasaImg.kf.setImage(with: url)
-                    cell.activityIndicator.stopAnimating()
-                }
-            }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.tableView.deselectRow(at: indexPath, animated: true)
-        self.presenter?.navigateToApiNasaDetail(day: [collectionlist[indexPath.row]])
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 133.0
+    func passInfo(info: [ItemDefault]) {
+        self.collectionlist = info
     }
 }
 
@@ -98,5 +69,20 @@ extension ApiNasaFilteredViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchBarText = searchBar.text else {return}
         self.presenter?.showApiImageInfo(searchText: searchBarText)
+        self.search = searchBarText
+    }
+}
+
+extension ApiNasaFilteredViewController: CustomTableViewControllerDeleagte {
+    func setInfo(item: ItemDefault) {
+        self.presenter?.setInfo(info: item)
+    }
+    
+    func deleteInfo(item: ItemDefault) {
+        self.presenter?.deletInfo(info: item)
+    }
+    
+    func accessToDetail(item: ItemDefault) {
+        self.presenter?.navigateToApiNasaDetail(info: item)
     }
 }

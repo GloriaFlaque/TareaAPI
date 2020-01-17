@@ -13,6 +13,8 @@ class ApiNasaDetailViewController: UIViewController {
     @IBOutlet weak var nasaImg: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var starButton: UIButton!
+    var search: String!
     var presenter: ApiNasaDetailPresenter?
 
     override func viewDidLoad() {
@@ -34,23 +36,54 @@ class ApiNasaDetailViewController: UIViewController {
         super.viewDidDisappear(animated)
         self.presenter?.viewDidUpdate(status: .didDisappear)
     }
+    
+    @IBAction func clickFavorites(sender: UIButton) {
+        if starButton.isSelected == false {
+            self.setImageandColorForButton(color: .black, button: starButton)
+            self.presenter?.setInfo(info: self.presenter!.item)
+            starButton.isSelected = true
+            self.presenter?.showApiInfo(searchText: search)
+        } else {
+            self.setImageandColorForButton(color: .gray, button: starButton)
+            self.presenter?.deletInfo(info: self.presenter!.item)
+            starButton.isSelected = false
+            if search != nil {
+                self.presenter?.showApiInfo(searchText: search)
+            }
+        }
+    }
 }
 
 extension ApiNasaDetailViewController: ApiNasaDetailView {
-    func show(item: [ItemDetails]) {
-        for i in item {
-            for i in i.data {
-                self.titleLabel.text = i.title
-                self.descriptionLabel.text = "Location: \( i.location)\nDate: \(i.date_created)\nExplanation: \(i.description)\n\(i.description_508)"
-            }
-            for i in i.links {
-                if i.href.contains("video") {
-                    self.nasaImg.image = UIImage(named: "nasa")
-                } else {
-                    let url = URL(string: i.href)
-                        self.nasaImg.kf.setImage(with: url)
-                }
+    func show(item: ItemDefault) {
+        for i in item.data {
+            self.titleLabel.text = i.title
+            self.descriptionLabel.text = "Location: \( i.location)\nDate: \(i.date_created)\nExplanation: \(i.description)\n\(i.description_508)"
+        }
+        for i in item.links {
+            if i.href.contains("video") {
+                self.nasaImg.image = UIImage(named: "nasa")
+            } else {
+                let url = URL(string: i.href)
+                    self.nasaImg.kf.setImage(with: url)
             }
         }
+    }
+    
+    func setupUI() {
+        if self.presenter?.item.favorite == true {
+            self.setImageandColorForButton(color: .black, button: starButton)
+            self.starButton.isSelected = true
+        } else {
+            self.setImageandColorForButton(color: .gray, button: starButton)
+        }
+    }
+}
+
+private extension ApiNasaDetailViewController {
+    func setImageandColorForButton(color: UIColor, button: UIButton) {
+        let tintedImage = UIImage(named: "star")?.withRenderingMode(.alwaysTemplate)
+        button.tintColor = color
+        button.setImage(tintedImage, for: .normal)
     }
 }

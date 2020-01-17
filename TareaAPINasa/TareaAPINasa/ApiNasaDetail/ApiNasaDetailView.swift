@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// View protocol interface to enable comunication with view logic implementation (Presenter)
 protocol ApiNasaDetailView: ViewProtocol {
-    func show(item: [ItemDetails])
+    func show(item: ItemDefault)
 }
